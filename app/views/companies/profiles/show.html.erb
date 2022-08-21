@@ -1,0 +1,12 @@
+<h1>Company profile</h1>
+<h3>Email: <%= @company.email %></h3>
+<br>
+<%= link_to "Home Page", root_path %>
+<br>
+<%= link_to "Update Profile", edit_company_registration_path %>
+<br>
+<%= link_to "Log out", destroy_company_session_path, data: {turbo: false} %>
+<br>
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(current_company), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<br>
+<%= link_to "Back", :back %>
