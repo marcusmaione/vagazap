@@ -2,6 +2,16 @@
 <br>
 <%= link_to "About us", about_path %>
 <br>
+<br>
+<br>
+<h3>I'm open to work!</h3>
 <%= link_to "Sign up", new_user_registration_path %>
 <br>
 <%= link_to "My profile", user_profile_path(current_user) %>
+<br>
+<br>
+<br>
+<h3>I'm hiring!</h3>
+<%= link_to "Sign up", new_company_registration_path %>
+<br>
+<%= link_to "Company profile", company_profile_path(current_company) %>
