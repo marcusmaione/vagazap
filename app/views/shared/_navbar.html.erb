@@ -1,0 +1,18 @@
+<div class="navbar-header">
+
+    <div class="nav-left">
+        <%= link_to root_path, class: "navbar-logo" do %>
+            <h4>Vagazap</h4>
+        <% end %>
+    </div>
+
+    <div class="nav-right">
+        <% if user_signed_in? %>
+            <%= link_to "My profile", user_profile_path, class: "navbutton" %>
+        <% else %>
+            <%= link_to "Log in", new_user_session_path, class: "navlogin" %>
+            <%= link_to "Sign up", new_user_registration_path, class: "navbutton" %>
+        <% end %>
+    </div>
+
+</div>
