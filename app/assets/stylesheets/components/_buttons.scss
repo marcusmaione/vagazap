@@ -1,26 +1,26 @@
 .btn-primary {
-    user-select: none;
-    padding: 4px 8px;
-    border-radius: 2px;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
-    color: $white;
-    text-decoration: none;
-    background-color: $red;
-    text-decoration: none;
-    position: relative;
-  }
-  
-  .btn-primary:hover {
-    opacity: 0.7;
-    color: $white;
-  }
-  
-  .btn-primary:active {
-    top: 2px;
-  }
-  
-  .btn-facebook {
-    background-color: $fb-blue;
-    border-color: $fb-blue;
-    margin-top: 30px;
-  }
+  user-select: none;
+  padding: 4px 8px;
+  border-radius: 2px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+  color: $white;
+  text-decoration: none;
+  background-color: $red;
+  text-decoration: none;
+  position: relative;
+}
+
+.btn-primary:hover {
+  opacity: 0.7;
+  color: $white;
+}
+
+.btn-primary:active {
+  top: 2px;
+}
+
+.btn-facebook {
+  background-color: $fb-blue;
+  border-color: $fb-blue;
+  margin-top: 30px;
+}
