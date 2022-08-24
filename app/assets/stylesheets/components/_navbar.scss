@@ -1,69 +1,69 @@
 .navbar-header {
-    justify-content: space-between;
-    background: $blue;
-    min-height: 50px;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-  }
-  
-  @media (min-width: 576px) {
-    .navbar-header {
-      height: 64px;
-    }
-  }
-  
-  .nav-left{
-    margin-left: 12px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  justify-content: space-between;
+  background: $blue;
+  min-height: 50px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
 
-    a {
-      text-decoration: none;
-    }
+@media (min-width: 576px) {
+  .navbar-header {
+    height: 64px;
   }
-  
-  .navbar-logo {
-    color: $white;
-  
-    h4 {
-      font-family: $logo-font;
-      font-weight: 700;
-      font-size: 20px;
-      margin: 0px;
-      padding: 0px;
-    }
-  }
-  
-  .nav-right {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-right: 12px;
-  }
-  
-  @media (min-width: 576px) {
-    .nav-right {
-      margin-right: 20px;
-    }
-  }
-  
-  .nav-right a {
-    font-weight: 500;
-  }
-  
-  .navlogin {
-    padding: 4px 8px;
-    color: $white;
+}
+
+.nav-left{
+  margin-left: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  a {
     text-decoration: none;
-    margin: 0px 6px 0px 0px;
   }
-  
-  .navlogin:hover {
-    color: $white;
-    opacity: 0.7;
+}
+
+.navbar-logo {
+  color: $white;
+
+  h4 {
+    font-family: $logo-font;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0px;
+    padding: 0px;
   }
+}
+
+.nav-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 12px;
+}
+
+@media (min-width: 576px) {
+  .nav-right {
+    margin-right: 20px;
+}
+}
+
+.nav-right a {
+  font-weight: 500;
+}
+
+.navlogin {
+  padding: 4px 8px;
+  color: $white;
+  text-decoration: none;
+  margin: 0px 6px 0px 0px;
+}
+
+.navlogin:hover {
+  color: $white;
+  opacity: 0.7;
+}

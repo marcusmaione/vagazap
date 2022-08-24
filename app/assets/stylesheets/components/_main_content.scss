@@ -1,0 +1,161 @@
+body {
+  background-color: $white;
+  margin: 0px;
+  font-family: $body-font;
+}
+
+.main-content {
+  min-height: calc(100vh - 100px);
+}
+
+@media (min-width: 576px) {
+  .main-content {
+    min-height: calc(100vh - 128px);
+  }
+}
+
+.steps-container {
+  margin: 0px auto 30px auto;
+  padding: 30px 24px 0px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 992px) {
+  .steps-container {
+    padding: 0 15px;
+    margin: 56px auto 56px auto;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.steps-text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 30px 0px 30px 0px;
+  color: $black;
+}
+
+.steps-item h5 {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.steps-item p {
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 400px) {
+  .steps-item {
+    padding: 0 25px;
+  }
+}
+
+.steps-picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.steps-img {
+  vertical-align: middle;
+  border-style: none;
+  width: 100%;
+  border-radius: 5px;
+}
+
+@media (min-width: 992px) {
+  .steps-img {
+    width: 530px;
+    margin-left: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .steps-img {
+    width: 635px;
+    margin-bottom: 0;
+  }
+}
+
+.free-start {
+  margin: 60px auto 30px auto;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.features-container {
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .features-container {
+    padding: 10px 50px;
+    margin: 56px auto 56px auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.features-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+@media (min-width: 478px) {
+    .features-card {
+        max-width: 400px;
+    }
+}
+
+.fa-address-card {
+  color: $light-gray;
+  font-size: 40px;
+}
+
+.fa-map-marked-alt {
+  color: $light-gray;
+  font-size: 40px;
+}
+
+.fa-user-check {
+  color: $light-gray;
+  font-size: 40px;
+}
+
+.features-text {
+  background-color: $blue;
+  text-align: center;
+  color: $white;
+  vertical-align: middle;
+  padding: 20px 10px;
+  margin: 20px 10px;
+  border-radius: 5px;
+}
+
+@media (min-width: 992px) {
+  .features-text {
+  vertical-align: top;
+  }
+}
+
+.features-text h5 {
+  font-weight: 700;
+  font-size: 20px;
+  margin: 10px 0 20px 0;
+}
+
+.features-text p {
+  font-weight: 500;
+  margin-bottom: 0px;
+}

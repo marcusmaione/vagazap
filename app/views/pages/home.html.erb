@@ -1,14 +1,70 @@
-<h1>This is the home page!</h1>
-<br>
-<br>
-<h3>I'm open to work!</h3>
-<%= link_to "Sign up", new_user_registration_path %>
-<br>
-<%= link_to "My profile", user_profile_path(current_user) %>
-<br>
-<br>
-<br>
-<h3>I'm hiring!</h3>
-<%= link_to "Sign up", new_company_registration_path %>
-<br>
-<%= link_to "Company profile", company_profile_path(current_company) %>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.5) 0%, rgba(0,36,61,0.5) 50%), url('<%= image_path "fabio-spinelli-695744.jpg" %>');" alt="Vagazap | Find your next job!">
+    <div>
+    </div>
+    <div class="banner-content">
+        <div>
+            <h5>Find your next job!</h5>
+        </div>  
+        <% if user_signed_in? %>
+            <%= link_to "My profile", user_profile_path(current_user), class: "btn-primary" %>
+        <% else %>
+            <%= link_to "User sign up", new_user_registration_path, class: "btn-primary" %>
+        <% end %>
+        <% if company_signed_in? %>
+            <%= link_to "My company profile", company_profile_path(current_company), class: "btn-primary" %>
+        <% else %>
+            <%= link_to "Company sign up", new_company_registration_path, class: "btn-primary" %>
+        <% end %>
+    </div>
+</div>
+
+<div class="steps-container">
+    <div class="steps-text">
+        <div class="steps-item">
+            <h5>Sign up</h5>
+            <p>Create your profile.</p>
+        </div>
+        <div class="steps-item">
+            <h5>Select jobs</h5>
+            <p>Add jobs to your shortlist.</p>
+        </div>
+        <div class="steps-item">
+            <h5>That's it</h5>
+            <p>When there is a fit, the company will contact you.</p>
+        </div>
+    </div>
+    <div class="steps-picture" alt="Vagazap works on smartphones, tablets or computers.">
+        <%= image_tag "thom-holmes-580122.jpg", class: "steps-img" %>
+    </div>
+</div>
+
+<% if user_signed_in? %>
+<% else %>
+    <div class="free-start">
+        <%= link_to "Sign up for free", new_user_registration_path, class: "btn-primary" %>
+    </div>
+<% end %>
+
+<div class="features-container">
+    <div class="features-card">
+        <i class="fas fa-address-card"></i>
+        <div class="features-text">
+            <h5>100% Digital</h5>
+            <p>No more wasting time walking around with paper CVs.</p>
+        </div>
+    </div>
+    <div class="features-card">
+        <i class="fas fa-map-marked-alt"></i>
+        <div class="features-text">
+            <h5>Effective</h5>
+            <p>Jobs near you or where your location doesn't matter.</p>
+        </div>
+    </div>
+    <div class="features-card">
+        <i class="fas fa-user-check"></i>
+        <div class="features-text">
+            <h5>Simple</h5>
+            <p>No need for filters: let our algorithm work for you.</p>
+        </div>
+    </div>
+</div>
