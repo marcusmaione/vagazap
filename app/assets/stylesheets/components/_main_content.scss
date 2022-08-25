@@ -5,6 +5,10 @@ body {
 }
 
 .main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // to properly position the footer at every page regardless of screen size
   min-height: calc(100vh - 100px);
 }
 
