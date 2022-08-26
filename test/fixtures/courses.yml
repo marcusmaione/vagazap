@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  level: MyString
+  school: MyString
+  field: MyString
+  complete: MyString
+  user: one
+
+two:
+  level: MyString
+  school: MyString
+  field: MyString
+  complete: MyString
+  user: two
