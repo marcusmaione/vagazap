@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable
-  
+  has_many :courses, :dependent => :destroy
+  has_many :experiences, :dependent => :destroy
   CITIES = ["Lisbon", "London", "New York", "Remote"].freeze
 end
