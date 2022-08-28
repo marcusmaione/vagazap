@@ -1,12 +1,15 @@
-<h1>User profile</h1>
-<h3>Email: <%= @user.email %></h3>
-<br>
-<%= link_to "Home Page", root_path %>
+<h3><%= @user.first_name %> <%= @user.last_name %></h3>
+<p>Email: <%= @user.email %></p>
+<p>Phone: <%= @user.phone %></p>
+<p>Location: <%= @user.city %></p>
+<p>LINK TO JOB_SEARCH_PATH</p>
+<p>LISTA DE LIKED JOBS</p>
 <br>
 <%= link_to "Update Profile", edit_user_registration_path %>
 <br>
 <%= link_to "Log out", destroy_user_session_path, data: {turbo: false} %>
 <br>
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(current_user), data: { confirm: "Are you sure?" }, method: :delete %></p>
-<br>
 <%= link_to "Back", :back %>
+<br>
+<%= link_to "Home Page", root_path %>
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(current_user), data: { confirm: "Are you sure?" }, method: :delete %></p>
