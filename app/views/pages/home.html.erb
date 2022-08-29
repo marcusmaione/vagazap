@@ -34,7 +34,7 @@
     </div>
 </div>
 
-<% if user_signed_in? %>
+<% if user_signed_in? || company_signed_in? %>
 <% else %>
     <div class="free-start">
         <%= link_to "Sign up for free", new_user_registration_path, class: "btn-primary" %>
@@ -65,7 +65,10 @@
     </div>
 </div>
 
-<div class="company-signup">
-    <h3>Are you hiring?</h3>
-    <%= link_to "Company sign up", new_company_registration_path, class: "btn-primary" %>
-</div>
+<% if company_signed_in? %>
+<% else %>
+    <div class="company-signup">
+        <h3>Are you hiring?</h3>
+        <%= link_to "Company sign up", new_company_registration_path, class: "btn-primary" %>
+    </div>
+<% end %>
