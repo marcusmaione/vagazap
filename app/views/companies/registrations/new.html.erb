@@ -1,29 +1,39 @@
-<h2>Sign up</h2>
+<div class="form-box">
+    <h5>Create your company account:</h5>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
+        <%= f.error_notification %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
-  <%= render "companies/shared/error_messages", resource: resource %>
+        <%= f.input :name,
+                    autofocus: true,
+                    required: true,
+                    :label => "Company name:" %>
+        <%= f.input :sector,
+                    required: true,
+                    :label => "Industry:",
+                    collection: Company::COMPANYSECTORS %>
+        <%= f.input :city,
+                    required: true,
+                    :label => "Location:",
+                    collection: User::CITIES %>
+        <%= f.input :email,
+                    required: true,
+                    input_html: { autocomplete: "email" },
+                    :label => "Email:" %>
+        <%= f.input :password,
+                    required: true,
+                    hint: ("#{@minimum_password_length} minimum characters"),
+                    input_html: { autocomplete: "new-password" },
+                    :label => "Create a password:" %>
+        <%= f.input :password_confirmation,
+                    required: true,
+                    input_html: { autocomplete: "new-password" },
+                    :label => "Confirm password:" %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+        <div class="form-actions">
+            <%= f.submit class: 'btn-primary', value: "Confirm" %>
+        </div>
+    <% end %>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "companies/shared/links" %>
+    <p>Do you have a company account?</p>
+    <%= link_to "Log in", new_company_session_path, class: 'text-link' %>
+</div>
