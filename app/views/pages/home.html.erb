@@ -5,12 +5,6 @@
         <div>
             <h5>Find your next job!</h5>
         </div>  
-        <% if user_signed_in? %>
-            <%= link_to "My profile", user_profile_path(current_user), class: "btn-primary" %>
-        <% end %>
-        <% if company_signed_in? %>
-            <%= link_to "My company profile", company_profile_path(current_company), class: "btn-primary" %>
-        <% end %>
     </div>
 </div>
 
@@ -70,5 +64,7 @@
     <div class="company-signup">
         <h3>Are you hiring?</h3>
         <%= link_to "Company sign up", new_company_registration_path, class: "btn-primary" %>
+        <p>or</p>
+        <%= link_to "Company log in", new_company_session_path, class: "text-link" %>       
     </div>
 <% end %>
