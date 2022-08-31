@@ -2,8 +2,20 @@
 <p>Email: <%= @company.email %></p>
 <p>Industry: <%= @company.sector %></p>
 <p>Location: <%= @company.city %></p>
-<p>LISTA DE JOBS</p>
-<p>LINK TO CREATE JOB</p>
+
+<p>Jobs:</p>
+
+<% @company.jobs.each do |job| %>
+    <p>Title: <%= job.title %> </p>
+    <p>Functional area: <%= job.sector %></p>
+    <p>Level: <%= job.level %></p>
+    <p>Education requirement: <%= job.education_requirement %></p>
+    <p>Description: <%= job.description %></p>
+    <!-- %= link_to "Update", edit_company_job_path(@company, job), class: "text-link" %-->
+<% end %>
+
+<!-- %= link_to "Create a job", new_company_job_path(@company, @job), class:"btn-primary" %-->
+<%= link_to "Create a job", new_job_path(current_company, @job), class:"btn-primary" %>
 <br>
 <%= link_to "Update Company", edit_company_registration_path %>
 <br>

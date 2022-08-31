@@ -20,5 +20,8 @@ Rails.application.routes.draw do
     registrations:      'companies/registrations',
     sessions:           'companies/sessions',
     unlocks:            'companies/unlocks'
-  }  
+  }   
+
+  get "companies/:company_id/jobs/new", to: "jobs#new", as: :new_job
+  post "companies/:company_id/jobs", to: "jobs#create", as: :company_jobs
 end
