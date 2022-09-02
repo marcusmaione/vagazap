@@ -9,11 +9,8 @@ class JobsController < ApplicationController
     def create
         @job = Job.new(job_params)
         @job.company = @company
-        if @job.save
-            redirect_to company_profile_path(@company)
-        else
-            render :new, status: :unprocessable_entity
-        end
+        @job.save
+        redirect_to company_profile_path(@company)
     end
 
     private
