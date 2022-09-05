@@ -1,0 +1,37 @@
+.degrees-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0px 0px 0px 0px;
+}
+  
+.degree {
+    background-color: $blue;
+    color: $white;
+    padding: 0px 10px 10px 10px;
+    margin: 0px 10px 0px 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    justify-content: space-around;
+    opacity: 1;
+    border-radius: 2px;
+}
+  
+.degree p {
+    margin: 10px 0px 0px 0px;
+}
+
+.degree a {
+    margin: 10px 10px 30px 10px;
+}
+
+.degree-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+  
+.separator {
+    margin: 35px 0px;
+    border: solid 0.5px #495867;
+    width: 100%;
+}
