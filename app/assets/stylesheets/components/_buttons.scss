@@ -19,6 +19,22 @@
   top: 2px;
 }
 
+.text-link {
+  align-self: center;
+  color: $blue;
+  text-decoration: none;
+  margin: 10px;
+  font-weight: 500;
+}
+
+.update-link {
+  align-self: center;
+  color: $blue;
+  text-decoration: none;
+  margin: 10px 10px 30px 10px;
+  font-weight: 500;
+}
+
 .btn-facebook {
   background-color: $fb-blue;
   border-color: $fb-blue;

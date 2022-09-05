@@ -22,6 +22,12 @@ Rails.application.routes.draw do
     unlocks:            'companies/unlocks'
   }   
 
+  # Jobs
   get "companies/:company_id/jobs/new", to: "jobs#new", as: :new_job
   post "companies/:company_id/jobs", to: "jobs#create", as: :company_jobs
+  get "companies/:company_id/jobs", to: "jobs#index", as: :jobs_index
+  get "companies/:company_id/jobs/:job_id/edit", to: "jobs#edit", as: :edit_job
+  put "companies/:company_id/jobs/:job_id", to: "jobs#update", as: :update_job
+#  get "companies/:company_id/jobs/:job_id", to: "jobs#show", as: :job
+  delete "companies/:company_id/jobs/:job_id", to: "jobs#destroy", as: :delete_job  
 end
