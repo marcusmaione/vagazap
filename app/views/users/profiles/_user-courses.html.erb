@@ -1,0 +1,19 @@
+<h3>Education:</h3>
+
+<div class="degrees-box">
+  <% @user.courses.each do |course| %>
+    <div class="degree">
+      <p>School: <%= course.school %></p>
+      <p><%= course.level %> in <%=  course.field %></p>
+      <% if course.complete == "1" %>
+        <p>Complete</p>
+      <% else %>
+        <p>Incomplete</p>
+      <% end %>
+    </div>
+    <div class="degree-buttons">
+        <%= link_to "Update", edit_course_path(course), class: "update-link" %>
+        <%= link_to "Delete", course_path(course), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "update-link" %>
+    </div>
+  <% end %>
+</div>

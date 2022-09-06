@@ -1,0 +1,17 @@
+<h3>Experience:</h3>
+
+<div class="degrees-box">
+  <% @user.experiences.each do |experience| %>
+    <div class="degree">
+      <p><%= experience.company_name %> (<%= experience.company_sector %>)</p>
+      <p>Title: <%=  experience.title %></p>
+      <p>Functional area: <%=  experience.functional_area %></p>
+      <p>Description: <%=  experience.description %></p>
+      <p>Years of experience: <%=  experience.years %></p>
+    </div>
+    <div class="degree-buttons">
+        <%= link_to "Update", edit_experience_path(experience), class: "update-link" %>
+        <%= link_to "Delete", experience_path(experience), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "update-link" %>
+    </div>
+  <% end %>
+</div>

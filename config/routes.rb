@@ -22,6 +22,10 @@ Rails.application.routes.draw do
     unlocks:            'companies/unlocks'
   }   
 
+  # Experiences and Courses
+  resources :experiences
+  resources :courses
+
   # Jobs
   get "companies/:company_id/jobs/new", to: "jobs#new", as: :new_job
   post "companies/:company_id/jobs", to: "jobs#create", as: :company_jobs

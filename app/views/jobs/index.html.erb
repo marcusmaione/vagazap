@@ -11,7 +11,7 @@
         </div>
         <div class="degree-buttons">
             <%= link_to "Update", edit_job_path(@company, job), class: "update-link" %>
-            <%= link_to "Delete Job", delete_job_path(@company, job), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "update-link" %>
+            <%= link_to "Delete", delete_job_path(@company, job), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "update-link" %>
         </div>
     <% end %>
 </div>
