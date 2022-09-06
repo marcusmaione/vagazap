@@ -2,14 +2,16 @@
 <p>Email: <%= @user.email %></p>
 <p>Phone: <%= @user.phone %></p>
 <p>Location: <%= @user.city %></p>
-<p>LINK TO JOB_SEARCH_PATH</p>
-<p>LISTA DE LIKED JOBS</p>
+<p>Placeholder: job search</p>
+<p>Placeholder: list of liked jobs</p>
 <br>
-<%= link_to "Update Profile", edit_user_registration_path %>
+<%= link_to "Available jobs", jobs_user_index_path, class: "text-link" %>
 <br>
-<%= link_to "Log out", destroy_user_session_path, data: {turbo: false} %>
+<%= link_to "Update Profile", edit_user_registration_path, class: "text-link" %>
 <br>
-<%= link_to "Back", :back %>
+<%= link_to "Log out", destroy_user_session_path, data: {turbo: false}, class:"text-link" %>
 <br>
-<%= link_to "Home Page", root_path %>
+<%= link_to "Back", :back, class:"text-link" %>
+<br>
+<%= link_to "Home Page", root_path, class:"text-link" %>
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(current_user), data: { confirm: "Are you sure?" }, method: :delete %></p>

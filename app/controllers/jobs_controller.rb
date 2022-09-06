@@ -18,7 +18,10 @@ class JobsController < ApplicationController
     end
 
     def index
-        @company = Company.find(params[:company_id])
+      @company = Company.find(params[:company_id])
+    end
+
+    def user_index
     end
   
     def edit

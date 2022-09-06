@@ -1,0 +1,19 @@
+<h3>Jobs:</h3>
+
+<div class="degrees-box">
+    <% Job.all.each do |job| %>
+        <div class="degree">
+            <p>Company: <%= job.company.name %> </p>
+            <p>Title: <%= job.title %> </p>
+            <p>Functional area: <%= job.sector %></p>
+            <p>Level: <%= job.level %></p>
+            <p>Education requirement: <%= job.education_requirement %></p>
+            <p>Description: <%= job.description %></p>
+        </div>
+        <div class="degree-buttons">
+            <p>botão para favoritar</p>
+        </div>
+    <% end %>
+</div>
+<br>
+<%= link_to "Back", :back, class: "text-link" %>
