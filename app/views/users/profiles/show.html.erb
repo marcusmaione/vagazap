@@ -2,6 +2,11 @@
 <p>Email: <%= @user.email %></p>
 <p>Phone: <%= @user.phone %></p>
 <p>Location: <%= @user.city %></p>
+<%= render "user-experiences", experiences: @user.experiences %>
+<%= link_to "Add experience", new_experience_path, class: "text-link" %>
+<%= render "user-courses", courses: @user.courses %>
+<%= link_to "Add education", new_course_path, class: "text-link" %>
+<br>
 <p>Placeholder: job search</p>
 <p>Placeholder: list of liked jobs</p>
 <br>

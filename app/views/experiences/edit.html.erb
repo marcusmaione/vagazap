@@ -1,0 +1,31 @@
+<div class="form-box">
+    <h5>Update experience:</h5>
+    <%= simple_form_for(@experience) do |f| %>
+        <%= f.error_notification %>
+
+        <%= f.input :company_name,
+                    autofocus: true,
+                    :label => "Company name:" %>
+        <%= f.input :company_sector,
+                    :label => "Company sector:",
+                    collection: Company::COMPANYSECTORS %>
+        <%= f.input :title,
+                    :label => "Title:",
+                    collection: Job::JOBPOSITIONS %>
+        <%= f.input :functional_area,
+                    :label => "Functional area:",
+                    collection: Company::FUNCTIONALAREA %>
+        <%= f.input :description,
+                    :label => "Description:" %>
+        <%= f.input :years,
+                    hint: "Only numbers",
+                    :label => "Years of experience:" %>
+
+        <div class="form-actions">
+            <%= f.submit class: 'btn-primary', value: "Confirm" %>
+        </div>
+    <% end %>
+
+    <p>You can add more experiences later.</p>
+    <%= link_to "Back", :back, class: 'text-link' %>
+</div>
