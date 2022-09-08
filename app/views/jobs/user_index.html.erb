@@ -10,10 +10,11 @@
             <p>Education requirement: <%= job.education_requirement %></p>
             <p>Description: <%= job.description %></p>
         </div>
+        <br>
         <div class="degree-buttons">
-            <p>botão para favoritar</p>
+            <%= render "likes/private_button", job: job, like_status: current_user.liked?(job) %>
         </div>
     <% end %>
 </div>
 <br>
-<%= link_to "Back", :back, class: "text-link" %>
+<%= link_to "Back", user_profile_path, class: "text-link" %>

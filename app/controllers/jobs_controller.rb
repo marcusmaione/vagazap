@@ -39,7 +39,13 @@ class JobsController < ApplicationController
     def destroy
       @job.destroy
       redirect_to jobs_index_path(current_company)
-    end  
+    end
+
+    def like
+      @job = Job.find(params[:job_id])
+      current_user.like(@job)
+      redirect_to jobs_user_index_path
+    end
   
     private
   

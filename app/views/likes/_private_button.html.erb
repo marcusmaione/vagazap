@@ -1,0 +1,5 @@
+<% like_text = like_status ? "Unlike" : "Like" %>
+<%= button_to like_text, like_job_path(job_id: job.id), class: "btn-primary" %>
+<div class="like-count">
+    <%= render "likes/like_count", job: job  %>
+</div>
