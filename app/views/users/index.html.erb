@@ -1,0 +1,31 @@
+<h3>Job Seekers:</h3>
+
+<div class="degrees-box">
+    <% User.all.each do |user| %>
+        <div class="degree">
+            <p>First name: <%= user.first_name %> </p>
+            <p>Last name: <%= user.last_name %> </p>
+            <p>Email: <%= user.email %></p>
+            <% Experience.where(user: user).each do |experience| %>
+                <p><%= experience.title %> at <%= experience.company_name %> (<%= experience.company_sector %>).</p>
+                <p>Worked in the <%= experience.functional_area %> team for <%= experience.years %> years.</p>
+                <p><%= experience.description %></p>
+            <% end %>
+            <br>
+            <% Course.where(user: user).each do |course| %>
+                <p>
+                    <%= course.level %> in <%= course.field %> from <%= course.school %> 
+                    <% if course.complete %>
+                        (Complete)
+                    <% else %>
+                        (Incomplete)
+                    <% end %>
+                </p>
+            <% end %>
+        </div>
+        <br>
+        <p>PLACEHOLDER LIKE BUTTON</p>
+    <% end %>
+</div>
+<br>
+<%= link_to "Back", company_profile_path, class: "text-link" %>

@@ -29,6 +29,13 @@
     flex-direction: row;
     justify-content: space-around;
 }
+
+.like-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 28px;
+}
   
 .separator {
     margin: 35px 0px;

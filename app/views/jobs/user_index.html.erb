@@ -11,7 +11,7 @@
             <p>Description: <%= job.description %></p>
         </div>
         <br>
-        <div class="degree-buttons">
+        <div class="like-box">
             <%= render "likes/private_button", job: job, like_status: current_user.liked?(job) %>
         </div>
     <% end %>

@@ -2,9 +2,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "about", to: "pages#about"
 
-  get "user_profile", to: "users/profiles#show", as: :user_profile
-  get "company_profile", to: "companies/profiles#show", as: :company_profile
-
+  # Users
   devise_for :users, controllers: {
     confirmations:      'users/confirmations',
     omniauth_callbacks: 'users/omniauth_callbacks',
@@ -14,6 +12,10 @@ Rails.application.routes.draw do
     unlocks:            'users/unlocks'
   }
 
+  get "user_profile", to: "users/profiles#show", as: :user_profile
+  get "users", to: "users#index", as: :user_index
+  
+  #Companies
   devise_for :companies, controllers: {
     confirmations:      'companies/confirmations',
     passwords:          'companies/passwords',
@@ -21,6 +23,8 @@ Rails.application.routes.draw do
     sessions:           'companies/sessions',
     unlocks:            'companies/unlocks'
   }   
+
+  get "company_profile", to: "companies/profiles#show", as: :company_profile
 
   # Experiences and Courses
   resources :experiences
@@ -34,6 +38,5 @@ Rails.application.routes.draw do
   put "companies/:company_id/jobs/:job_id", to: "jobs#update", as: :update_job
   delete "companies/:company_id/jobs/:job_id", to: "jobs#destroy", as: :delete_job
   get "jobs", to: "jobs#user_index", as: :jobs_user_index
-
   post "jobs/:job_id", to: "jobs#like", as: :like_job
 end
