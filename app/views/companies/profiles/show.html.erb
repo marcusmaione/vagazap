@@ -7,6 +7,8 @@
 <br>
 <%= link_to "Create a job", new_job_path(current_company, @job), class:"btn-primary" %>
 <br>
+<%= link_to "List of job seekers", user_index_path, class:"text-link" %>
+<br>
 <%= link_to "Update Company Profile", edit_company_registration_path, class:"text-link" %>
 <br>
 <%= link_to "Log out", destroy_company_session_path, data: {turbo: false}, class:"text-link" %>
