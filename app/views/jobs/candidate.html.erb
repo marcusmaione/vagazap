@@ -1,0 +1,11 @@
+<%= render 'candidate-details' %>
+<% if @candidate.experiences.count >= 1 %>
+    <%= render 'candidate-experiences', experiences: @candidate.experiences %>
+<% else %>
+<% end %>
+<% if @candidate.courses.count >= 1 %>
+    <%= render 'candidate-courses', courses: @candidate.courses %>
+<% else %>
+<% end %>
+<%= link_to "Back", :back, class: "text-link" %>
+<br>

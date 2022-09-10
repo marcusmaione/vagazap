@@ -1,0 +1,17 @@
+<h3>Best candidates for <%= @job.title %>:</h3>
+
+<div class="degrees-box">
+    <% @filtered_candidates.each do |candidate| %>
+        <% if candidate[1] > 0 %>
+            <div class="degree">
+                <p>Name: <%= candidate[0].first_name %> <%= candidate[0].last_name %></p>
+                <p><%= candidate[0].experiences[0].years %> years of experience in <%= candidate[0].experiences[0].functional_area %></p>
+                <p><%= candidate[0].courses[0].level %> in <%= candidate[0].courses[0].field %></p>
+            </div>
+        <% else %>
+        <% end %>
+        <%= link_to "Full profile", job_candidate_path(@job.company_id, @job, candidate[0].id), class: "text-link" %>    
+    <% end %>
+</div>
+
+<%= link_to "Back", company_profile_path, class: "text-link" %>

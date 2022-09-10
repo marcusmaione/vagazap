@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :omniauthable
   has_many :courses, :dependent => :destroy
   has_many :experiences, :dependent => :destroy
-  CITIES = ["Lisbon", "London", "New York", "Remote"].freeze
+  CITIES = ["Lisbon", "Remote"].freeze
 
   has_many :likeables, dependent: :destroy
   has_many :liked_jobs, through: :likeables, source: :job
@@ -22,5 +22,9 @@ class User < ApplicationRecord
         else
             liked_jobs << job
         end
+    end
+
+    def self.initial_filter(job)
+        joins(:experiences).where(experiences: { functional_area: job.sector })
     end
 end

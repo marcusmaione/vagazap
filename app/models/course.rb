@@ -1,4 +1,4 @@
 class Course < ApplicationRecord
-  DEGREELEVELS = ["High school", "Bacherlor's", "Master's", "Doctorate", "Other"].freeze
+  DEGREELEVELS = ["Bacherlor's", "Master's", "Doctorate"].freeze
   belongs_to :user
 end
