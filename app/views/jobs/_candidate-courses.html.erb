@@ -1,0 +1,18 @@
+<h3>Education:</h3>
+
+<div class="degrees-box">
+  <% @candidate.courses.each do |course| %>
+    <div class="degree">
+      <p><%= course.level %>
+        <% if course.complete == "1" %>
+          (Complete)
+        <% else %>
+          (Incomplete)
+        <% end %>
+      </p>
+      <p>School: <%= course.school %></p>
+      <p>Field: <%= course.field %></p>
+    </div>
+    <br>
+  <% end %>
+</div>

@@ -39,4 +39,7 @@ Rails.application.routes.draw do
   delete "companies/:company_id/jobs/:job_id", to: "jobs#destroy", as: :delete_job
   get "jobs", to: "jobs#user_index", as: :jobs_user_index
   post "jobs/:job_id", to: "jobs#like", as: :like_job
+
+  get "companies/:company_id/jobs/:job_id/candidates", to: 'jobs#candidates', :as => :job_candidates
+  get "companies/:company_id/jobs/:job_id/candidate/:user_id", to: 'jobs#candidate', :as => :job_candidate
 end
