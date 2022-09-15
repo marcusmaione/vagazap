@@ -5,11 +5,13 @@ class JobsController < ApplicationController
         @company = current_company
     end
   
+
     def new
         @company = Company.find(params[:company_id])
         @job = Job.new(company: @company)
     end
   
+
     def create
         @job = Job.new(job_params)
         @job.company = Company.find(params[:company_id])
@@ -17,18 +19,37 @@ class JobsController < ApplicationController
         redirect_to company_profile_path(@job.company)
     end
 
+
     def index
         @company = Company.find(params[:company_id])
     end
 
-    def user_index
+
+    def user_index 
+        @user = current_user
+        unique_experiences = []
+        @jobs_array = []
+
+        @user.experiences.each do |experience|
+            unique_experiences << experience.functional_area
+        end
+
+        unique_experiences.uniq!
+            
+        unique_experiences.each do |experience|
+            Job.where(sector: experience).each do |job|
+                @jobs_array << job
+            end
+        end
     end
   
+    
     def edit
         @company = Company.find(params[:company_id])
         @job.company = @company
     end
   
+    
     def update
         @company = Company.find(params[:company_id])
         @job.company = @company
@@ -36,17 +57,20 @@ class JobsController < ApplicationController
         redirect_to jobs_index_path(current_company)
     end
   
+    
     def destroy
         @job.destroy
         redirect_to jobs_index_path(current_company)
     end
 
+    
     def like
         @job = Job.find(params[:job_id])
         current_user.like(@job)
         redirect_to jobs_user_index_path
     end
 
+    
     def candidates
         job = Job.find(params[:job_id])
         @prefiltered_candidates = User.initial_filter(job)
@@ -73,16 +97,20 @@ class JobsController < ApplicationController
         @filtered_candidates = candidates_hash.sort_by { |key, value| value }.reverse
     end
   
+    
     def candidate
         @candidate = User.find(params[:user_id])
     end
   
+    
     private
   
+    
     def set_job
         @job = Job.find(params[:job_id])
     end
   
+   
     def job_params
         params.require(:job).permit(:title, :level, :sector, :description, :education_requirement)
     end

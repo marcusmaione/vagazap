@@ -1,7 +1,7 @@
 <h3>Jobs:</h3>
 
 <div class="degrees-box">
-    <% Job.all.each do |job| %>
+    <% @jobs_array.each do |job| %>
         <div class="degree">
             <p>Company: <%= job.company.name %> </p>
             <p>Title: <%= job.title %> </p>

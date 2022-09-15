@@ -7,10 +7,7 @@
 <%= render "user-courses", courses: @user.courses %>
 <%= link_to "Add education", new_course_path, class: "text-link" %>
 <br>
-<p>Placeholder: job search</p>
-<p>Placeholder: list of liked jobs</p>
-<br>
-<%= link_to "Available jobs", jobs_user_index_path, class: "text-link" %>
+<%= link_to "Available jobs", jobs_user_index_path, class: "btn-primary" %>
 <br>
 <%= link_to "Update Profile", edit_user_registration_path, class: "text-link" %>
 <br>
