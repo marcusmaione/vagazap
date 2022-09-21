@@ -5,6 +5,7 @@
         <% if candidate[1] > 0 %>
             <div class="degree">
                 <p>Name: <%= candidate[0].first_name %> <%= candidate[0].last_name %></p>
+                <p>Location: <%= candidate[0].city %>
                 <p><%= candidate[0].experiences[0].years %> years of experience in <%= candidate[0].experiences[0].functional_area %></p>
                 <p><%= candidate[0].courses[0].level %> in <%= candidate[0].courses[0].field %></p>
             </div>

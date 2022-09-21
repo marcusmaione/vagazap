@@ -38,7 +38,7 @@ class JobsController < ApplicationController
             
         unique_experiences.each do |experience|
             Job.where(sector: experience).each do |job|
-                @jobs_array << job
+                @jobs_array << job if job.company.city == @user.city
             end
         end
     end
