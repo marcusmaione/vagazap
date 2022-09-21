@@ -4,6 +4,7 @@
     <% @jobs_array.each do |job| %>
         <div class="degree">
             <p>Company: <%= job.company.name %> </p>
+            <p>Location: <%= job.company.city %> </p>
             <p>Title: <%= job.title %> </p>
             <p>Functional area: <%= job.sector %></p>
             <p>Level: <%= job.level %></p>

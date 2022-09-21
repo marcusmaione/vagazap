@@ -25,6 +25,6 @@ class User < ApplicationRecord
     end
 
     def self.initial_filter(job)
-        joins(:experiences).where(experiences: { functional_area: job.sector })
+        where(city: job.company.city).joins(:experiences).where(experiences: { functional_area: job.sector })
     end
 end
